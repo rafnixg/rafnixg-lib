@@ -1,1 +1,0 @@
-"""RafnixG - Personal Card"""
