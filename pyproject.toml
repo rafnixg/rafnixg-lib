@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rafnixg"
-version = "1.1.0"
+version = "1.2.0"
 description = "Rafnix Guzman Personal Card"
 readme = "README.md"
 authors = [{ name = "Rafnix Guzman", email = "rafnixg@gmail.com" }]
@@ -29,7 +29,7 @@ Homepage = "https://github.com/rafnixg/rafnixg-lib"
 [project.scripts]
 rafnixg = "rafnixg.__main__:main"
 [tool.bumpver]
-current_version = "1.1.0"
+current_version = "1.2.0"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
