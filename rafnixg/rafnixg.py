@@ -1,35 +1,61 @@
-import typer
+"""RafnixG - Personal Card"""
 from rich.console import Console
 from rich.table import Table
 
-class RafnixG:
 
+class RafnixG:
+    """RafnixG - Personal Card"""
     def __init__(self):
-        self.username = 'rafnixg'
-        self.name = 'Rafnix Guzmán'
-        self.position = 'Python Software Developer'
-        self.web = 'https://rafnixg.dev'
-        self.blog = 'https://blog.rafnixg.dev'
-        self.cv = 'https://rafnixg.dev/resume'
-        self.twitter = '@rafnixg'
+        self.username = "rafnixg"
+        self.name = "Rafnix Guzmán"
+        self.position = "Python Software Developer"
+        self.web = "https://rafnixg.dev"
+        self.blog = "https://blog.rafnixg.dev"
+        self.cv = "https://rafnixg.dev/resume"
+        self.github = "https://github.com/rafnixg"
+        self.twitter = "@rafnixg"
         self.code = {
-            'backend': ['Python', 'Odoo', 'Flask', 'Django', 'FastAPI', 'NodeJS', 'PHP'],
-            'database': ['PostgreSQL', 'MySQL', 'SQLite3', 'Mongo DB', 'Redis'],
-            'devops': ['Docker', 'Linux', 'Jenkins', 'GitHub Actions', 'AWS', 'Proxmox'],
-            'frontend': ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Svelte', 'Boostrap'],
-            'tools': ['GIT', 'GitHub', 'GitLab', 'Pandas', 'Jupyter notebook', 'SQLAlchemy', 'Celery', 'Nginx'],
-            'misc': ['Firebase', 'TDD', 'SCRUM', 'SOLID', 'gRPC', 'ML', 'Tech Writer']
+            "backend": [
+                "Python",
+                "Odoo",
+                "FastAPI",
+                "Flask",
+                "Django",
+            ],
+            "database": ["PostgreSQL", "MySQL", "SQLite3", "Mongo DB", "Redis"],
+            "devops": [
+                "Docker",
+                "Linux",
+                "Jenkins",
+                "GitHub Actions",
+                "AWS",
+                "Proxmox",
+                "LXC",
+            ],
+            "frontend": ["HTML", "CSS", "JavaScript", "ReactJS", "Svelte", "Boostrap"],
+            "tools": [
+                "GIT",
+                "GitHub",
+                "GitLab",
+                "Pandas",
+                "Jupyter notebook",
+                "SQLAlchemy",
+                "Celery",
+                "Nginx",
+            ],
+            "misc": ["Firebase", "TDD", "SCRUM", "SOLID", "gRPC", "ML", "Tech Writer"],
         }
-        self.architecture = ['SPA', 'MVC', 'Serverless', 'microservices']
+        self.architecture = ["SPA", "MVC", "Serverless", "microservices"]
 
     def __str__(self):
-        return f'{self.name} | {self.position}'
+        return f"{self.name} | {self.position}"
 
     def display(self):
+        """Display personal card"""
         console = Console()
 
         table = Table(show_header=True, header_style="bold magenta")
-        table.add_column("Attribute", style="dim", width=12)
+        table.add_column("Attribute", style="dim", width=16)
         table.add_column("Value")
 
         for key, value in self.__dict__.items():
@@ -40,12 +66,5 @@ class RafnixG:
                 table.add_row(key, ", ".join(value))
             else:
                 table.add_row(key, value)
-
+        
         console.print(table)
-
-def main():
-    me = RafnixG()
-    me.display()
-
-if __name__ == '__main__':
-    typer.run(main)
