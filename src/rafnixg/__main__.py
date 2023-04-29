@@ -1,6 +1,10 @@
 """RafnixG - Personal Card"""
 from rafnixg import RafnixG
 
-if __name__ == '__main__':
+
+def main():
     me = RafnixG()
     me.display()
+
+if __name__ == '__main__':
+    main()
