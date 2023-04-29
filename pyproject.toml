@@ -1,0 +1,30 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rafnixg"
+version = "1.0.0"
+description = "Rafnix Guzman Personal Card"
+readme = "README.md"
+authors = [{ name = "Rafnix Guzman", email = "rafnixg@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["personal card", "console"]
+dependencies = [
+    "rich==13.3.5",
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/rafnixg/rafnixg-lib"
+
+[project.scripts]
+rafnixg = "rafnixg.__main__:main"
