@@ -15,38 +15,8 @@ class RafnixG:
         self.cv = "https://rafnixg.dev/resume"
         self.github = "https://github.com/rafnixg"
         self.twitter = "@rafnixg"
-        self.code = {
-            "backend": [
-                "Python",
-                "Odoo",
-                "FastAPI",
-                "Flask",
-                "Django",
-            ],
-            "database": ["PostgreSQL", "MySQL", "SQLite3", "Mongo DB", "Redis"],
-            "devops": [
-                "Docker",
-                "Linux",
-                "Jenkins",
-                "GitHub Actions",
-                "AWS",
-                "Proxmox",
-                "LXC",
-            ],
-            "frontend": ["HTML", "CSS", "JavaScript", "ReactJS", "Svelte", "Boostrap"],
-            "tools": [
-                "GIT",
-                "GitHub",
-                "GitLab",
-                "Pandas",
-                "Jupyter notebook",
-                "SQLAlchemy",
-                "Celery",
-                "Nginx",
-            ],
-            "misc": ["LLMs", "TDD", "SCRUM", "SOLID", "gRPC", "ML", "Tech Writer"],
-        }
-        self.architecture = ["SPA", "MVC", "Serverless", "microservices"]
+        self.about = "Experienced software developer with 10+ years of expertise in designing, developing and implementing web systems across various sectors. Backend specialist skilled in Python, Linux, and Git. Passionate about continuous learning and open-source technology."
+
 
     def __str__(self):
         return f"{self.name} (@{self.username}) - {self.position}"
@@ -59,8 +29,7 @@ class RafnixG:
             show_header=False,
             title=str(self),
             highlight=True,
-            title_style="bold magenta"
-
+            title_style="bold magenta",
         )
         table.add_column("Attribute", style="bold", width=16)
         table.add_column("Value")
