@@ -26,7 +26,7 @@ rafnixg
 ### Blog Posts
 
 ```python
-from rafnixg.blog_posts import BlogPosts
+from rafnixg import BlogPosts
 
 blog_posts = BlogPosts()
 blog_posts.get_posts()
@@ -35,7 +35,7 @@ blog_posts.get_posts()
 ### CV Resume
 
 ```python
-from rafnixg.resume import Resume
+from rafnixg import Resume
 
 resume = Resume()
 resume.get_resume()
