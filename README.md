@@ -20,3 +20,24 @@ Then run it:
 ```bash
 rafnixg
 ```
+
+## Extra Tools 🛠
+
+### Blog Posts
+
+```python
+from rafnixg.blog_posts import BlogPosts
+
+blog_posts = BlogPosts()
+blog_posts.get_posts()
+```
+
+### CV Resume
+
+```python
+from rafnixg.resume import Resume
+
+resume = Resume()
+resume.get_resume()
+```
+

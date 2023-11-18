@@ -260,3 +260,14 @@ class Resume:
             )
             for reference in self.raw_data.get("references", [])
         ]
+
+    def get_resume(self):
+        """Get resume."""
+        return {
+            "basics": self.basics,
+            "work": self.work,
+            "education": self.education,
+            "skills": self.skills,
+            "languages": self.languages,
+            "references": self.references,
+        }
