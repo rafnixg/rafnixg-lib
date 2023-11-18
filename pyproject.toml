@@ -17,7 +17,8 @@ classifiers = [
 keywords = ["personal card", "console"]
 dependencies = [
     "rich",
-    "feedparser"
+    "feedparser",
+    "requests",
 ]
 requires-python = ">=3.9"
 

@@ -147,12 +147,9 @@ class Reference:
 class Resume:
     """Resume class."""
 
-    def __init__(self, json_path=None):
+    def __init__(self):
         """Constructor."""
-        if json_path is None:
-            raise ValueError("json_path is required")
-
-        self.json_path = json_path
+        self.json_path = "https://resume.rafnixg.dev/resume.json"
         self.raw_data = self.read_json()
         self.basics = self.get_basics()
         self.work = self.get_work()
