@@ -59,7 +59,7 @@ class RafnixG:
             highlight=True,
             title_style="bold magenta",
         )
-        table.add_column("Title", style="bold", width=16)
+        table.add_column("Title", style="bold", width=40)
         table.add_column("Link")
 
         posts = self._posts()
