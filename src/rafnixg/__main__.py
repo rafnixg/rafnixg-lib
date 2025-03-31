@@ -3,7 +3,9 @@ from rafnixg import RafnixG
 
 
 def main():
+    """Main function."""
     me = RafnixG()
+    me.get_links()
     me.display()
 
 if __name__ == '__main__':

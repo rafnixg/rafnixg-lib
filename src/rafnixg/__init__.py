@@ -13,4 +13,4 @@ from rafnixg.resume import (
     Resume,
 )
 
-__version__ = "1.6.0"
+__version__ = "1.7.1"

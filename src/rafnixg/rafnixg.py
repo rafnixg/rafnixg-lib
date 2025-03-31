@@ -1,7 +1,10 @@
 """RafnixG - Personal Card"""
+
 from rich.console import Console
 from rich.table import Table
+
 from .blog_posts import BlogPosts
+from .links import Links
 
 
 class RafnixG:
@@ -11,9 +14,10 @@ class RafnixG:
         self.username = "rafnixg"
         self.name = "Rafnix Guzmán"
         self.position = "Python Software Developer"
+        self.links = "https://links.rafnixg.dev"
         self.web = "https://rafnixg.dev"
         self.blog = "https://blog.rafnixg.dev"
-        self.cv = "https://rafnixg.dev/resume"
+        self.cv = "https://resume.rafnixg.dev"
         self.github = "https://github.com/rafnixg"
         self.twitter = "@rafnixg"
         self.about = "Experienced software developer with 10+ years of expertise in designing, developing and implementing web systems across various sectors. Backend specialist skilled in Python, Linux, and Git. Passionate about continuous learning and open-source technology."
@@ -66,5 +70,25 @@ class RafnixG:
 
         for post in posts:
             table.add_row(post.title, post.link)
+
+        console.print(table)
+
+    def get_links(self):
+        """Display links"""
+        console = Console()
+
+        table = Table(
+            show_header=False,
+            title="Links",
+            highlight=True,
+            title_style="bold magenta",
+        )
+        table.add_column("Name", style="bold", width=16)
+        table.add_column("URL")
+
+        links = Links().links
+
+        for link in links:
+            table.add_row(link["name"], link["url"])
 
         console.print(table)
