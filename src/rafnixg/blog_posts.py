@@ -12,7 +12,7 @@ class BlogPost:
         summay: str,
         link: str,
         published: str,
-        cover_image: str,
+        # cover_image: str,
         tags: list,
     ) -> None:
         """Constructor.
@@ -28,7 +28,7 @@ class BlogPost:
         self.summary = summay
         self.link = link
         self.published = published
-        self.cover_image = cover_image
+        # self.cover_image = cover_image
         self.tags = tags
 
     def to_dict(self):
@@ -67,7 +67,7 @@ class BlogPosts:
                 summay=post.summary,
                 link=post.link,
                 published=post.published,
-                cover_image=post.cover_image,
+                # cover_image=post.cover_image,
                 tags=[
                     {
                         "name": tag["term"],
