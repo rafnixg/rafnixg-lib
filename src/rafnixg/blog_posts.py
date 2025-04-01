@@ -45,9 +45,13 @@ class BlogPosts:
             feed_path (str): Ruta del archivo RSS.
         """
         self.url = "https://blog.rafnixg.dev/rss.xml"
+        print("Reading RSS feed from: ", self.url)
         self.feed_path = self.url
         self._feed = self.read_feed()
+        print(f"Feed: {self._feed}")
+        print("Parsing RSS feed...")
         self.posts = self.get_posts()
+        print("Parsed RSS feed.")
 
     def read_feed(self) -> dict:
         """Leer el feed desde un archivo RSS.

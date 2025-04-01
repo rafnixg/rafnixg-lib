@@ -40,4 +40,3 @@ from rafnixg import Resume
 resume = Resume()
 resume.get_resume()
 ```
-
