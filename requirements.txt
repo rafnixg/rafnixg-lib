@@ -12,3 +12,5 @@ pygments==2.15.1
     # via rich
 rich>=13.3.5
     # via rafnixg (pyproject.toml)
+requests==2.32.3
+feedparser==6.0.11
