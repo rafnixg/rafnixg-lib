@@ -1,7 +1,6 @@
-"""Blog Posts module using RSS feed."""
+"""Blog Posts module using HashNode Client."""
 import json
-import feedparser
-
+from .hashnode import hashnode_posts
 
 class BlogPost:
     """Blog Post class."""
@@ -12,7 +11,7 @@ class BlogPost:
         summay: str,
         link: str,
         published: str,
-        # cover_image: str,
+        cover_image: str,
         tags: list,
     ) -> None:
         """Constructor.
@@ -28,7 +27,7 @@ class BlogPost:
         self.summary = summay
         self.link = link
         self.published = published
-        # self.cover_image = cover_image
+        self.cover_image = cover_image
         self.tags = tags
 
     def to_dict(self):
@@ -41,37 +40,26 @@ class BlogPosts:
 
     def __init__(self):
         """Constructor.
-        Args:
-            feed_path (str): Ruta del archivo RSS.
+        Inicializa y obtiene los posts.
         """
-        self.url = "https://blog.rafnixg.dev/rss.xml"
-        print("Reading RSS feed from: ", self.url)
-        self.feed_path = self.url
-        self._feed = self.read_feed()
-        print(f"Feed: {self._feed}")
-        print("Parsing RSS feed...")
         self.posts = self.get_posts()
-        print("Parsed RSS feed.")
 
-    def read_feed(self) -> dict:
-        """Leer el feed desde un archivo RSS.
-        Returns:
-            feed (dict): Diccionario con los datos del feed.
-        """
-        return feedparser.parse(self.feed_path)
 
     def get_posts(self) -> list[BlogPost]:
         """Extraer los post del feed.
         Returns:
             posts: Lista de diccionarios con los datos de los post.
         """
+        posts = hashnode_posts()
+        if not posts:
+            return []
         return [
             BlogPost(
                 title=post.title,
                 summay=post.summary,
                 link=post.link,
                 published=post.published,
-                # cover_image=post.cover_image,
+                cover_image=post.cover_image,
                 tags=[
                     {
                         "name": tag["term"],
@@ -81,10 +69,11 @@ class BlogPosts:
                 if post.get("tags")
                 else [],
             )
-            for post in self._feed.entries
+            for post in posts
         ]
 
     def save_to_json(self):
         """Escribir los posts en un archivo JSON."""
         with open("posts.json", "w", encoding="utf-8") as file:
             json.dump(self.posts.to_dict(), file, indent=4)
+

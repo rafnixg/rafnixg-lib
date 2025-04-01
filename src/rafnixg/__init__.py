@@ -12,5 +12,6 @@ from rafnixg.resume import (
     Reference,
     Resume,
 )
+from rafnixg.hashnode import hashnode_posts
 
-__version__ = "1.7.3"
+__version__ = "1.7.4"
