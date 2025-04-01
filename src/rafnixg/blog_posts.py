@@ -55,16 +55,16 @@ class BlogPosts:
             return []
         return [
             BlogPost(
-                title=post.title,
-                summay=post.summary,
-                link=post.link,
-                published=post.published,
-                cover_image=post.cover_image,
+                title=post['title'],
+                summay=post['summary'],
+                link=post['link'],
+                published=post['published'],
+                cover_image=post['cover_image'],
                 tags=[
                     {
                         "name": tag["term"],
                     }
-                    for tag in post.tags
+                    for tag in post["tags"]
                 ]
                 if post.get("tags")
                 else [],
@@ -76,4 +76,3 @@ class BlogPosts:
         """Escribir los posts en un archivo JSON."""
         with open("posts.json", "w", encoding="utf-8") as file:
             json.dump(self.posts.to_dict(), file, indent=4)
-
