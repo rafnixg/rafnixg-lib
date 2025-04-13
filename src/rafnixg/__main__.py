@@ -6,6 +6,7 @@ def main():
     """Main function."""
     me = RafnixG()
     me.get_links()
+    me.posts()
     me.display()
 
 if __name__ == '__main__':
