@@ -5,6 +5,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/rafnixg)](https://pypi.org/project/rafnixg/)
 [![Build Status](https://github.com/rafnixg/rafnixg-lib/actions/workflows/python-publish.yml/badge.svg)](https://github.com/rafnixg/rafnixg-lib/actions)
 [![Downloads](https://img.shields.io/pypi/dm/rafnixg)](https://pypi.org/project/rafnixg/)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rafnixg/rafnixg-lib)
 
 ## 👋 Introduction
 
