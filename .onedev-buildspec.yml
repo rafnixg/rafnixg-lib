@@ -1,0 +1,125 @@
+version: 43
+jobs:
+- name: python ci
+  steps:
+  - type: CheckoutStep
+    name: checkout code
+    cloneCredential:
+      type: DefaultCredential
+    withLfs: false
+    withSubmodules: false
+    condition: SUCCESSFUL
+    optional: false
+  - type: GenerateChecksumStep
+    name: generate dependency checksum
+    files: pyproject.toml requirements.txt
+    targetFile: checksum
+    condition: SUCCESSFUL
+    optional: false
+  - type: SetupCacheStep
+    name: set up dependency cache
+    key: pip_cache_@file:checksum@
+    loadKeys:
+    - pip_cache
+    paths:
+    - /root/.cache/pip
+    uploadStrategy: UPLOAD_IF_NOT_HIT
+    condition: SUCCESSFUL
+    optional: false
+  - type: CommandStep
+    name: detect build version
+    runInContainer: true
+    image: 1dev/yq:1.0.0
+    interpreter:
+      type: DefaultInterpreter
+      commands: yq '.project.version' pyproject.toml > buildVersion
+    useTTY: true
+    condition: SUCCESSFUL
+    optional: false
+  - type: SetBuildVersionStep
+    name: set build version
+    buildVersion: '@file:buildVersion@'
+    condition: SUCCESSFUL
+    optional: false
+  - type: CommandStep
+    name: build and test
+    runInContainer: true
+    image: python
+    interpreter:
+      type: ShellInterpreter
+      shell: bash
+      commands: |-
+        set -e
+        pip install -e .[dev]
+        pip install -r requirements.txt
+        pip install pytest-cov ruff
+        pytest --cov --junitxml=./pytest-result.xml
+        coverage xml
+        #ruff check --exit-zero --output-format=json --output-file=ruff-result.json --exclude=.git
+    useTTY: true
+    condition: SUCCESSFUL
+    optional: false
+  - type: PublishJUnitReportStep
+    name: publish unit test report
+    reportName: Unit Test
+    filePatterns: pytest-result.xml
+    condition: ALWAYS
+    optional: false
+  - type: PublishCoberturaReportStep
+    name: publish coverage report
+    reportName: Coverage
+    filePatterns: coverage.xml
+    condition: ALWAYS
+    optional: false
+  - type: PublishRuffReportStep
+    name: publish ruff report
+    reportName: Ruff
+    filePatterns: ruff-result.json
+    failThreshold: MEDIUM
+    condition: ALWAYS
+    optional: false
+   - type: CommandStep
+    name: Publish Package
+    runInContainer: true
+    image: python
+    interpreter:
+      type: ShellInterpreter
+      shell: bash
+      commands: |-
+        set -e
+        
+        # Install build dependencies
+        pip install --upgrade pip build twine
+        
+        # Configure .pypirc for OneDev package registry
+        # Job secret 'access-token' should be defined in project build setting as an access token with package write permission
+        cat << EOF > $HOME/.pypirc
+        [distutils]
+        index-servers=
+          onedev
+
+        [onedev]
+        repository=https://git.rafnixg.dev/rafnixg-lib/~pypi
+        username=@job_token@
+        password=@secret:access-token@
+        EOF
+        
+        # Build the package (both source and wheel distributions)
+        python -m build
+        
+        # Check the built distributions for common issues
+        twine check dist/*
+        
+        # Upload package to OneDev PyPI registry
+        python -m twine upload --repository onedev dist/*
+    useTTY: true
+    condition: SUCCESSFUL
+    optional: false
+  triggers:
+  - type: BranchUpdateTrigger
+    userMatch: anyone
+  - type: PullRequestUpdateTrigger
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 14400
