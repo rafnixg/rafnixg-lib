@@ -78,7 +78,7 @@ jobs:
     failThreshold: MEDIUM
     condition: ALWAYS
     optional: false
-   - type: CommandStep
+  - type: CommandStep
     name: Publish Package
     runInContainer: true
     image: python
