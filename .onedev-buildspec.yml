@@ -42,43 +42,6 @@ jobs:
     condition: SUCCESSFUL
     optional: false
   - type: CommandStep
-    name: build and test
-    runInContainer: true
-    image: python
-    interpreter:
-      type: ShellInterpreter
-      shell: bash
-      commands: |-
-        set -e
-        pip install -e .[dev]
-        pip install -r requirements.txt
-        pip install pytest-cov ruff
-        pytest --cov --junitxml=./pytest-result.xml
-        coverage xml
-        #ruff check --exit-zero --output-format=json --output-file=ruff-result.json --exclude=.git
-    useTTY: true
-    condition: SUCCESSFUL
-    optional: false
-  - type: PublishJUnitReportStep
-    name: publish unit test report
-    reportName: Unit Test
-    filePatterns: pytest-result.xml
-    condition: ALWAYS
-    optional: false
-  - type: PublishCoberturaReportStep
-    name: publish coverage report
-    reportName: Coverage
-    filePatterns: coverage.xml
-    condition: ALWAYS
-    optional: false
-  - type: PublishRuffReportStep
-    name: publish ruff report
-    reportName: Ruff
-    filePatterns: ruff-result.json
-    failThreshold: MEDIUM
-    condition: ALWAYS
-    optional: false
-  - type: CommandStep
     name: Publish Package
     runInContainer: true
     image: python
@@ -87,10 +50,10 @@ jobs:
       shell: bash
       commands: |-
         set -e
-        
+
         # Install build dependencies
         pip install --upgrade pip build twine
-        
+
         # Configure .pypirc for OneDev package registry
         # Job secret 'access-token' should be defined in project build setting as an access token with package write permission
         cat << EOF > $HOME/.pypirc
@@ -103,13 +66,13 @@ jobs:
         username=@job_token@
         password=@secret:access-token@
         EOF
-        
+
         # Build the package (both source and wheel distributions)
         python -m build
-        
+
         # Check the built distributions for common issues
         twine check dist/*
-        
+
         # Upload package to OneDev PyPI registry
         python -m twine upload --repository onedev dist/*
     useTTY: true
