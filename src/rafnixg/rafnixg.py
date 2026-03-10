@@ -13,14 +13,14 @@ class RafnixG:
     def __init__(self):
         self.username = "rafnixg"
         self.name = "Rafnix Guzmán"
-        self.position = "Python Software Developer"
+        self.position = "Python Backend | AI Engineer | Odoo Developer"
         self.links = "https://links.rafnixg.dev"
         self.web = "https://rafnixg.dev"
         self.blog = "https://blog.rafnixg.dev"
         self.cv = "https://resume.rafnixg.dev"
         self.github = "https://github.com/rafnixg"
         self.twitter = "@rafnixg"
-        self.about = "Experienced software developer with 10+ years of expertise in designing, developing and implementing web systems across various sectors. Backend specialist skilled in Python, Linux, and Git. Passionate about continuous learning and open-source technology."
+        self.about = "Backend Python con +15 años construyendo sistemas en producción: REST APIs con FastAPI y Django, integraciones complejas, automatización, microservicios y migración de sistemas legacy. Especialista en implementaciones Odoo ERP. AI Engineer con experiencia práctica en LLMs, RAG y agentes autónomos."
 
     def __str__(self):
         return f"{self.name} (@{self.username}) - {self.position}"
