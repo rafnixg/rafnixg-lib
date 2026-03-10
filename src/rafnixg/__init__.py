@@ -2,10 +2,12 @@
 from rafnixg.rafnixg import RafnixG
 from rafnixg.blog_posts import BlogPosts, BlogPost
 from rafnixg.resume import (
+    Award,
     Basics,
     Certificate,
     Education,
     Profile,
+    Project,
     Work,
     Skill,
     Language,
