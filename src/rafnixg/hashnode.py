@@ -1,4 +1,5 @@
 """Blog RSS client."""
+import html
 import re
 from xml.etree import ElementTree
 
@@ -15,7 +16,8 @@ def _clean_html(text):
     """Limpiar etiquetas HTML de un texto."""
     if not text:
         return ""
-    return re.sub(r"<[^>]+>", "", text).strip()
+    cleaned = re.sub(r"<[^>]+>", "", text)
+    return html.unescape(cleaned).replace("\xa0", " ").strip()
 
 
 def _get_text(item, *paths):
