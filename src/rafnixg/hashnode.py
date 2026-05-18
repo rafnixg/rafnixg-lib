@@ -49,6 +49,7 @@ def _extract_tags(item):
     tags = [{"term": category.text.strip()} for category in item.findall("category") if category.text]
     return tags
 
+
 def hashnode_posts():
     """Obtener los posts desde RSS."""
     url = "https://blog.rafnixg.dev/rss.xml"
