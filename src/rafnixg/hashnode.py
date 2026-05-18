@@ -1,7 +1,8 @@
 """Blog RSS client."""
-import requests
-from xml.etree import ElementTree
 import re
+from xml.etree import ElementTree
+
+import requests
 
 NAMESPACES = {
     "content": "http://purl.org/rss/1.0/modules/content/",
