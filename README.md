@@ -20,7 +20,7 @@ Visit my personal website: [rafnixg.dev](https://rafnixg.dev)
 ## 🚀 Features
 
 - **Personal Card**: Display your personal information in a styled console table.
-- **Blog Posts**: Fetch and display your latest blog posts from Hashnode.
+- **Blog Posts**: Fetch and display your latest blog posts from RSS.
 - **Resume Tools**: Retrieve and display your resume details, including work experience, education, skills, and more.
 - **Customizable Links**: Manage and display your personal links.
 
@@ -81,7 +81,7 @@ The `RafnixG` class provides a method to display your personal card in the conso
 
 ### Blog Posts
 
-The `BlogPosts` class fetches your latest blog posts from Hashnode using the Hashnode GraphQL API. Posts include the title, summary, link, and publication date.
+The `BlogPosts` class fetches your latest blog posts from RSS. Posts include the title, summary, link, and publication date.
 
 ### Resume
 
@@ -142,7 +142,7 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 🌟 Acknowledgments
 
 - [Rich Library](https://github.com/Textualize/rich) for console styling.
-- [Hashnode API](https://hashnode.com/) for blog post integration.
+- [RSS](https://en.wikipedia.org/wiki/RSS) for blog post integration.
 - [Requests Library](https://docs.python-requests.org/) for HTTP requests.
 
 ---
