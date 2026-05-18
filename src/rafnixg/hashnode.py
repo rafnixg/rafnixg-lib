@@ -1,71 +1,77 @@
-"""Hashnode API client.
-This module provides a client for interacting with the Hashnode API using GraphQL."""
+"""Blog RSS client."""
 import requests
+from xml.etree import ElementTree
+import re
 
-def _transform_posts(posts_data):
-    """Transformar los posts en una lista de diccionarios.
-    Args:
-        posts_data (list): Lista de posts de Hashnode.
-    Returns:
-        list: Lista de posts transformados.
-    """
-    return [
-        _transform_post(post["node"])
-        for post in posts_data["data"]["publication"]["posts"]["edges"]
-    ]
+NAMESPACES = {
+    "content": "http://purl.org/rss/1.0/modules/content/",
+    "media": "http://search.yahoo.com/mrss/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+}
 
-def _transform_post(post_data):
-    """Transformar el post en un diccionario.
-    Args:
-        post_data (dict): Post de Hashnode.
-    Returns:
-        dict: Post transformado.
-    """
-    return {
-        "title": post_data["title"],
-        "summary": post_data["brief"],
-        "link": post_data["url"],
-        "published": post_data["publishedAt"],
-        "cover_image": post_data["coverImage"]["url"],
-    }
+
+def _clean_html(text):
+    """Limpiar etiquetas HTML de un texto."""
+    if not text:
+        return ""
+    return re.sub(r"<[^>]+>", "", text).strip()
+
+
+def _get_text(item, *paths):
+    """Obtener texto del primer path encontrado."""
+    for path in paths:
+        node = item.find(path, NAMESPACES)
+        if node is not None and node.text:
+            return node.text.strip()
+    return ""
+
+
+def _get_cover_image(item):
+    """Obtener imagen de portada desde media/enclosure."""
+    media_node = item.find("media:content[@url]", NAMESPACES)
+    if media_node is not None:
+        return media_node.attrib.get("url", "")
+
+    media_thumbnail = item.find("media:thumbnail[@url]", NAMESPACES)
+    if media_thumbnail is not None:
+        return media_thumbnail.attrib.get("url", "")
+
+    enclosure = item.find("enclosure[@url]")
+    if enclosure is not None:
+        return enclosure.attrib.get("url", "")
+
+    return ""
+
+
+def _extract_tags(item):
+    """Extraer etiquetas del item RSS."""
+    tags = [{"term": category.text.strip()} for category in item.findall("category") if category.text]
+    return tags
 
 def hashnode_posts():
-    """Obtener los posts de Hashnode usando GraphQL."""
-    query = """
-query Publication {
-  publication(host: "blog.rafnixg.dev"){
-    posts(first:0){
-      edges {
-        node {
-          slug
-          title
-          url
-          brief
-          publishedAt
-          coverImage{
-            url
-          }
-          content {
-            markdown
-          }
-        }
-      }
-    }
-  }
-}
-"""
-    url = "https://gql.hashnode.com/"
-    headers = {
-        "Content-Type": "application/json",
-    }
-    data = {
-        "query": query,
-    }
-    response = requests.post(url, headers=headers, json=data, timeout=10)
-    if response.status_code == 200:
-        return _transform_posts(response.json())
-    else:
+    """Obtener los posts desde RSS."""
+    url = "https://blog.rafnixg.dev/rss.xml"
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        root = ElementTree.fromstring(response.content)
+    except (requests.RequestException, ElementTree.ParseError):
         return []
+
+    posts = []
+    for item in root.findall("./channel/item"):
+        summary = _get_text(item, "description", "content:encoded")
+        posts.append(
+            {
+                "title": _get_text(item, "title"),
+                "summary": _clean_html(summary),
+                "link": _get_text(item, "link"),
+                "published": _get_text(item, "pubDate", "dc:date"),
+                "cover_image": _get_cover_image(item),
+                "tags": _extract_tags(item),
+            }
+        )
+    return posts
 
 if __name__ == "__main__":
     posts = hashnode_posts()
