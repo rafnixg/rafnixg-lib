@@ -2,10 +2,12 @@
 from rafnixg.rafnixg import RafnixG
 from rafnixg.blog_posts import BlogPosts, BlogPost
 from rafnixg.resume import (
+    Award,
     Basics,
     Certificate,
     Education,
     Profile,
+    Project,
     Work,
     Skill,
     Language,
@@ -14,4 +16,4 @@ from rafnixg.resume import (
 )
 from rafnixg.hashnode import hashnode_posts
 
-__version__ = "1.8.0"
+__version__ = "1.9.0"

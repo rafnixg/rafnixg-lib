@@ -103,6 +103,50 @@ class Certificate:
         self.url = url
 
 
+class Award:
+    """Award class."""
+
+    def __init__(
+        self,
+        title: str,
+        date: str,
+        awarder: str,
+        summary: str,
+    ):
+        """Constructor."""
+        self.title = title
+        self.date = date
+        self.awarder = awarder
+        self.summary = summary
+
+
+class Project:
+    """Project class."""
+
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        highlights: list[str],
+        keywords: list[str],
+        start_date: str,
+        url: str,
+        roles: list[str],
+        entity: str,
+        project_type: str,
+    ):
+        """Constructor."""
+        self.name = name
+        self.description = description
+        self.highlights = highlights
+        self.keywords = keywords
+        self.start_date = start_date
+        self.url = url
+        self.roles = roles
+        self.entity = entity
+        self.project_type = project_type
+
+
 class Skill:
     """Skill class."""
 
@@ -154,9 +198,12 @@ class Resume:
         self.basics = self.get_basics()
         self.work = self.get_work()
         self.education = self.get_education()
+        self.certificates = self.get_certificates()
+        self.awards = self.get_awards()
         self.skills = self.get_skills()
         self.languages = self.get_languages()
         self.references = self.get_references()
+        self.projects = self.get_projects()
 
     def read_json(self) -> dict:
         """Leer el feed desde un archivo JSON HTTP.
@@ -220,11 +267,40 @@ class Resume:
         return [
             Certificate(
                 title=certificate.get("name", ""),
-                date=certificate.get("startDate", ""),
+                date=certificate.get("date", ""),
                 awarder=certificate.get("issuer", ""),
                 url=certificate.get("url", ""),
             )
             for certificate in self.raw_data.get("certificates", [])
+        ]
+
+    def get_awards(self):
+        """Get awards."""
+        return [
+            Award(
+                title=award.get("title", ""),
+                date=award.get("date", ""),
+                awarder=award.get("awarder", ""),
+                summary=award.get("summary", ""),
+            )
+            for award in self.raw_data.get("awards", [])
+        ]
+
+    def get_projects(self):
+        """Get projects."""
+        return [
+            Project(
+                name=project.get("name", ""),
+                description=project.get("description", ""),
+                highlights=project.get("highlights", []),
+                keywords=project.get("keywords", []),
+                start_date=project.get("startDate", ""),
+                url=project.get("url", ""),
+                roles=project.get("roles", []),
+                entity=project.get("entity", ""),
+                project_type=project.get("type", ""),
+            )
+            for project in self.raw_data.get("projects", [])
         ]
 
     def get_skills(self):
@@ -264,7 +340,10 @@ class Resume:
             "basics": self.basics,
             "work": self.work,
             "education": self.education,
+            "certificates": self.certificates,
+            "awards": self.awards,
             "skills": self.skills,
             "languages": self.languages,
             "references": self.references,
+            "projects": self.projects,
         }
