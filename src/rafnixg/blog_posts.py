@@ -8,7 +8,7 @@ class BlogPost:
     def __init__(
         self,
         title: str,
-        summay: str,
+        summary: str,
         link: str,
         published: str,
         cover_image: str,
@@ -24,7 +24,7 @@ class BlogPost:
             tags (list): Lista de etiquetas.
         """
         self.title = title
-        self.summary = summay
+        self.summary = summary
         self.link = link
         self.published = published
         self.cover_image = cover_image
@@ -56,7 +56,7 @@ class BlogPosts:
         return [
             BlogPost(
                 title=post['title'],
-                summay=post['summary'],
+                summary=post['summary'],
                 link=post['link'],
                 published=post['published'],
                 cover_image=post['cover_image'],
@@ -75,4 +75,4 @@ class BlogPosts:
     def save_to_json(self):
         """Escribir los posts en un archivo JSON."""
         with open("posts.json", "w", encoding="utf-8") as file:
-            json.dump(self.posts.to_dict(), file, indent=4)
+            json.dump([post.to_dict() for post in self.posts], file, indent=4)

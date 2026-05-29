@@ -1,0 +1,326 @@
+[
+    {
+        "title": "Nanobot: Arquitectura y Funcionamiento del Agente IA Ultra-ligero",
+        "summary": "Introducci\u00f3n\nnanobot es una plataforma de asistente personal de IA dise\u00f1ada para ejecutarse en tu propia infraestructura, ya sea una laptop, un servidor peque\u00f1o o un contenedor en la nube (VPS). A dif",
+        "link": "https://blog.rafnixg.dev/nanobot-arquitectura-y-funcionamiento-del-agente-ia-ultra-ligero",
+        "published": "Sun, 29 Mar 2026 14:00:00 GMT",
+        "cover_image": "https://cdn.hashnode.com/uploads/covers/60e4a9cde9aeb8301a6a6d39/f00c0989-dda3-453b-9784-c245641db520.jpg",
+        "tags": [
+            {
+                "name": "calwbot"
+            },
+            {
+                "name": "openclaw"
+            },
+            {
+                "name": "nanobot"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "agents"
+            },
+            {
+                "name": "spanish"
+            },
+            {
+                "name": "espa\u00f1ol"
+            }
+        ]
+    },
+    {
+        "title": "\u2699\ufe0f Como automatizar tu librer\u00eda en PyPI con GitHub Actions",
+        "summary": "Continuando con un post anterior donde publicamos nuestra librer\u00eda a PyPI, vamos a ir un paso m\u00e1s all\u00e1 en el proceso de construcci\u00f3n y despliegue (o, mejor dicho, build y release). En este tutorial, crearemos nuestro propio workflow en GitHub Actions...",
+        "link": "https://blog.rafnixg.dev/como-automatizar-tu-libreria-en-pypi-con-github-actions",
+        "published": "Fri, 11 Apr 2025 14:00:56 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/wX2L8L-fGeA/upload/51df522c518c36bb2f60432d04342b30.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "pypi"
+            },
+            {
+                "name": "github-actions"
+            },
+            {
+                "name": "cicd"
+            }
+        ]
+    },
+    {
+        "title": "\ud83c\udfd7\ufe0f C\u00f3mo publicar tu propia librer\u00eda de Python: Gu\u00eda paso a paso",
+        "summary": "El objetivo de este tutorial es guiarte paso a paso en el proceso de creaci\u00f3n y publicaci\u00f3n de tu propia librer\u00eda en Python. Aunque Python ofrece una biblioteca est\u00e1ndar muy completa, aprovechar las contribuciones de la comunidad en PyPI te permite e...",
+        "link": "https://blog.rafnixg.dev/como-publicar-tu-propia-libreria-de-python-guia-paso-a-paso",
+        "published": "Fri, 04 Apr 2025 20:43:39 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/vb-3qEe3rg8/upload/63664bfffb704aaec45448ff9120141f.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "pypi"
+            },
+            {
+                "name": "package"
+            },
+            {
+                "name": "Open Source"
+            }
+        ]
+    },
+    {
+        "title": "Shell de Odoo: Domina Operaciones Avanzadas, Integraci\u00f3n de Librer\u00edas y Automatizaci\u00f3n de Tareas",
+        "summary": "En un post anterior, exploramos los conceptos b\u00e1sicos de la shell de la CLI de Odoo y c\u00f3mo configurar IPython como REPL para mejorar nuestra experiencia de desarrollo. Ahora, profundizaremos en el uso de la shell de Odoo, abordando temas m\u00e1s avanzado...",
+        "link": "https://blog.rafnixg.dev/shell-de-odoo-domina-operaciones-avanzadas-integracion-de-librerias-y-automatizacion-de-tareas",
+        "published": "Mon, 10 Apr 2023 21:24:39 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/xbEVM6oJ1Fs/upload/c61979ca790e36478ccfd07e09317664.jpeg",
+        "tags": [
+            {
+                "name": "Odoo"
+            },
+            {
+                "name": "shell"
+            },
+            {
+                "name": "shell odoo"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "espa\u00f1ol"
+            }
+        ]
+    },
+    {
+        "title": "Explorando Odoo a fondo: C\u00f3mo trabajar con la shell de la CLI y configurar IPython como REPL",
+        "summary": "\u00a1Hola a todos! Hoy vamos a explorar un tema esencial para todos los programadores de Odoo que deseen profundizar en el desarrollo y uso del ORM de Odoo: la shell de la CLI de Odoo. La CLI (Command Line Interface) de Odoo es la forma en que se ejecuta...",
+        "link": "https://blog.rafnixg.dev/explorando-odoo-a-fondo-como-trabajar-con-la-shell-de-la-cli-y-configurar-ipython-como-repl",
+        "published": "Thu, 30 Mar 2023 12:00:39 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/a4X1cdC1QAc/upload/0907fbada7fd37c284884a528569e522.jpeg",
+        "tags": [
+            {
+                "name": "Odoo"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "cli"
+            },
+            {
+                "name": "shell odoo"
+            }
+        ]
+    },
+    {
+        "title": "Crea tu propio chatbot con la API de OpenAI y Gradio en Python",
+        "summary": "Hoy vamos a aprender a crear una aplicaci\u00f3n en Python utilizando la API de OpenAI y Gradio. Esta publicaci\u00f3n ser\u00e1 \u00fatil para las personas que quieren aprender a utilizar la API de OpenAI y crear una aplicaci\u00f3n con una interfaz de usuario interactiva d...",
+        "link": "https://blog.rafnixg.dev/crea-tu-propio-chatbot-con-la-api-de-openai-y-gradio-en-python",
+        "published": "Wed, 22 Mar 2023 19:05:18 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/hZkOZGtlA5w/upload/b8b7ca97aff3fe83363c9b90c6177dd9.jpeg",
+        "tags": [
+            {
+                "name": "openai"
+            },
+            {
+                "name": "gradio"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "chatgpt"
+            }
+        ]
+    },
+    {
+        "title": "Los servicios que uso en mi HomeLab server: virtualizaci\u00f3n, contenedores y m\u00e1s.",
+        "summary": "\u00a1Hola nuevamente! hoy quiero profundizar en cada uno de los servicios y aplicaciones que tengo en mi homelab server y compartirlas contigo.\nIntroducci\u00f3n\nEn mi camino como desarrollador y entusiasta de la tecnolog\u00eda, he construido un homelab server en...",
+        "link": "https://blog.rafnixg.dev/los-servicios-que-uso-en-mi-homelab-server-virtualizacion-contenedores-y-mas",
+        "published": "Mon, 20 Mar 2023 23:42:31 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/EJe6LqEjHpA/upload/769f355c1142c6c1634c19b941d72ddf.jpeg",
+        "tags": [
+            {
+                "name": "proxmox"
+            },
+            {
+                "name": "self-hosted"
+            },
+            {
+                "name": "cloudflare"
+            },
+            {
+                "name": "Homelab"
+            },
+            {
+                "name": "nginx"
+            }
+        ]
+    },
+    {
+        "title": "Creando un entorno de desarrollo para Odoo 14.0 con VSCode en Ubuntu 22.04",
+        "summary": "En este art\u00edculo aprender\u00e1s a configurar un entorno de desarrollo para Odoo 14.0 en Ubuntu 22.04. Si est\u00e1s leyendo esto, probablemente ya sabes que Odoo es un ERP basado en Python, PostgreSQL y XML que permite a las empresas gestionar sus procesos em...",
+        "link": "https://blog.rafnixg.dev/creando-un-entorno-de-desarrollo-para-odoo-140-con-vscode-en-ubuntu-2204",
+        "published": "Tue, 14 Mar 2023 13:00:39 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/f77Bh3inUpE/upload/bf647ff9837c4d4b1c50314394b07e63.jpeg",
+        "tags": [
+            {
+                "name": "Odoo"
+            },
+            {
+                "name": "vscode"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "odoo developer"
+            },
+            {
+                "name": "spanish"
+            }
+        ]
+    },
+    {
+        "title": "Creando tu primer HomeLab Server: Consideraciones clave para empezar",
+        "summary": "\u00bfEst\u00e1s interesado en crear tu propio homelab server pero no sabes por d\u00f3nde empezar? Aqu\u00ed te presentamos algunas consideraciones clave que debes tener en cuenta para planificar y armar tu homelab.\nPor qu\u00e9 tener un homelab es importante\nUn homelab es ...",
+        "link": "https://blog.rafnixg.dev/creando-tu-primer-homelab-server-consideraciones-clave-para-empezar",
+        "published": "Fri, 10 Mar 2023 00:15:50 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/9wWX_jwDHeM/upload/93d501946d16f0753fb178d4394d8c21.jpeg",
+        "tags": [
+            {
+                "name": "Homelab"
+            },
+            {
+                "name": "self-hosted"
+            },
+            {
+                "name": "spanish"
+            }
+        ]
+    },
+    {
+        "title": "Actualiza tu perfil de GitHub con README y GitHub Actions - Parte 3",
+        "summary": "Si aun no has le\u00eddo las otras dos partes te invito a que las revises:\n\nCrear nuestro README en GitHub\n\nEscribir un script en python para crear nuestro README din\u00e1mico\n\n\nEn esta tercera entrega vamos a automatizar mediante GitHub Actions la generaci\u00f3n...",
+        "link": "https://blog.rafnixg.dev/actualiza-tu-perfil-de-github-con-readme-y-github-actions-parte-3",
+        "published": "Sun, 09 Aug 2020 00:59:16 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/MAYEkmn7G6E/upload/d6bf961a729b1007baf04287606f07d0.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "github-actions"
+            },
+            {
+                "name": "README"
+            }
+        ]
+    },
+    {
+        "title": "Actualiza tu perfil de GitHub con README y GitHub Actions - Parte 2",
+        "summary": "La idea principal es poder generar un archivo README.md con una lista de los \u00faltimos 5 post de este Blog, pero en esencia este c\u00f3digo con muy poco o hasta nula modificacion en algunos casos puede servir para otros servicios como dev.to, Medium o hash...",
+        "link": "https://blog.rafnixg.dev/actualiza-tu-perfil-de-github-con-readme-y-github-actions-parte-2",
+        "published": "Wed, 29 Jul 2020 19:24:33 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/MAYEkmn7G6E/upload/d6bf961a729b1007baf04287606f07d0.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "github-actions"
+            },
+            {
+                "name": "README"
+            }
+        ]
+    },
+    {
+        "title": "Actualiza tu perfil de GitHub con README y GitHub Actions - Parte 1",
+        "summary": "Esta sera una serie de 3 Post:\n\nCrear nuestro README en GitHub\n\nEscribir un script en python para crear nuestro README din\u00e1mico\n\nImplementar GitHub Actions para automatizar nuestro README\n\n\nAc\u00e1 te dejo una mirada de como quedo mi perfil, espero me de...",
+        "link": "https://blog.rafnixg.dev/actualiza-tu-perfil-de-github-con-readme-y-github-actions-parte-1",
+        "published": "Tue, 28 Jul 2020 21:35:14 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/MAYEkmn7G6E/upload/d6bf961a729b1007baf04287606f07d0.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "GitHub Actions"
+            },
+            {
+                "name": "README"
+            }
+        ]
+    },
+    {
+        "title": "Crea tu blog con Python usando GitHub Pages y Pelican",
+        "summary": "Cuando comenc\u00e9 a darle vuelta a la idea de empezar un blog de nuevo me vinieron muchas ideas de como hacerlo a la mente, como el de usar el famoso Wordpress, teniendo en cuenta que el blog lo quer\u00eda hacer para hablar un poco de python y las tecnolog\u00ed...",
+        "link": "https://blog.rafnixg.dev/crea-tu-blog-con-python-usando-github-pages-y-pelican",
+        "published": "Sat, 18 May 2019 19:06:00 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/xG8IQMqMITM/upload/31f1eeceb26639f0f17a965f76ce52f3.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "pelican"
+            },
+            {
+                "name": "GitHubPages"
+            }
+        ]
+    },
+    {
+        "title": "\ud83d\udc0d Entornos virtuales en Python usando Pipenv",
+        "summary": "Cuando iniciamos en el desarrollo con Python muchas veces no nos damos cuenta del dolor de cabeza que es mantener varios proyectos con diferentes versiones de dependencias en nuestra entorno de desarrollo local, a medida que vamos evolucionando vamos...",
+        "link": "https://blog.rafnixg.dev/entornos-virtuales-en-python-usando-pipenv",
+        "published": "Sun, 12 May 2019 00:39:00 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/5uU8HSpfwkI/upload/0acf143138e277fd30eb5845a2ee200b.jpeg",
+        "tags": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "pipenv"
+            },
+            {
+                "name": "virtual environment"
+            }
+        ]
+    },
+    {
+        "title": "Deploy usando\u00a0GIT-FTP",
+        "summary": "Es muy com\u00fan que cuando nos estamos iniciando en el mundo del desarrollo web y no tenemos dinero para costearnos un buen servicio, optemos por comprar espacio en un \u2018Shared host\u2019 o utilizar un hosting gratuito que b\u00e1sicamente funcional igual.\nIntrodu...",
+        "link": "https://blog.rafnixg.dev/deploy-usando-git-ftp",
+        "published": "Tue, 26 Jun 2018 18:57:00 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/2kH-6T6x_0I/upload/5576b8e4331eae994bc98b40c2d4e7e6.jpeg",
+        "tags": [
+            {
+                "name": "Git"
+            },
+            {
+                "name": "ftp"
+            }
+        ]
+    },
+    {
+        "title": "Ejecutar C\u00f3digo JavaScript en Sublime\u00a0Text",
+        "summary": "Cuando estamos iniciando en el desarrollo con JavaScript uno de los flujos de trabajos menos \u00f3ptimos para no decir los mas fastidiosos, son tener que escribir el c\u00f3digo en nuestro editor de c\u00f3digo favorito y tener que ir a la consola del explorador a...",
+        "link": "https://blog.rafnixg.dev/ejecutar-codigo-javascript-en-sublime-text",
+        "published": "Wed, 28 Jun 2017 18:48:00 GMT",
+        "cover_image": "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/_SgRNwAVNKw/upload/7d8d6f0cddfc178056b2e83a56d528db.jpeg",
+        "tags": [
+            {
+                "name": "Sublime Text"
+            },
+            {
+                "name": "JavaScript"
+            }
+        ]
+    }
+]
